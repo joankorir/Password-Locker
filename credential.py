@@ -1,3 +1,4 @@
+import pyperclip
 class  Credential:
     """
     Class that generates new instances of credentials
@@ -6,6 +7,14 @@ class  Credential:
     credent_list = [] #Empty
 
     def __init__(self,email,Account_name,Password):      
+
+    def test_copy_email(self):
+        '''
+        Test to confirm that we are copying the email address from a found contact
+        '''
+
+        self.new_contact.save_contact()
+        Contact.copy_email("0712345678")
    
         self.email = email
         self.Account_name = Account_name
@@ -33,18 +42,24 @@ class  Credential:
                 return Account_name
 
     @classmethod
-    def credential_exist(cls,number):
+    def credential_exist(cls,name):
          '''
          Method that checks if a credential exists from credent List.
          Args:
-           number : Account_name to search if it exists
+           name : Account_name to search if it exists
          Returns:
            Boolean: True or false depending if the credential exists
          '''
          for credential in cls.credent_list:
              if credential.Account_name == name :
                  return True
-         return False    
+         return False 
+
+    @classmethod
+    def copy_email(cls,Account_name):
+        credential_found = Credential.find_by_Account_name(Account_name)
+        pyperclip.copy(credential_found.email)
+          
 
         
     
