@@ -60,7 +60,7 @@ class TestCredential(unittest.TestCase):
 
     def test_credential_exists(self):
         '''
-        test to check if we can return a Boolean  if we cannot find the contact.
+        test to check if we can return a Boolean  if we cannot find the credential.
         '''
 
         self.new_credential.save_credential()
@@ -70,6 +70,15 @@ class TestCredential(unittest.TestCase):
         credential_exists = Credential.credential_exist("Instagram)
 
         self.assertTrue(credential_exists)
+
+
+    def test_display_credential(self):
+         '''
+         method that returns credential saved
+         '''
+
+         self.assertEqual(Credential.display_credentials(),Credential.credent_list)
+
 
     def test_copy_email(self):
         '''

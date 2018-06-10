@@ -55,6 +55,16 @@ class  Credential:
                  return True
          return False 
 
+
+    @classmethod
+      def display_credential(cls):
+          '''
+          method that returns the credent list
+          '''
+          return cls.credent_List
+
+          
+
     @classmethod
     def copy_email(cls,Account_name):
         credential_found = Credential.find_by_Account_name(Account_name)
