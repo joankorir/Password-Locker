@@ -35,3 +35,27 @@ class TestUserlogin(unittest.TestCase):
 
            self.new_userlogin.save_userlogin()
            self.assertEqual(len(Userlogin.userlogin_list),1)
+
+
+    def tearDown(self):
+            '''
+            tearDown method that does clean up after each test case has run.
+            '''
+
+    def test_check_userlogin(self)
+         '''
+          test to check if userlogin is exising
+          '''
+
+    def test_find_userlogin_by_full_name(self):
+        '''
+        self.new_contact.save_userlogin()
+        test_userlogin = Userlogin("Joan korir","joankorirchemutai@gmail.com")
+        test_userlogin.save_userlogin()
+
+        found_userlogin = Userlogin.find_by_full_name("Joan korir")
+
+        self.assertEqual(found_userlogin.email,test_userlogin.email)
+
+
+
