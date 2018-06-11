@@ -47,7 +47,7 @@ class TestCredential(unittest.TestCase):
     
     def test_find_credential_by_Account_name(self):
         '''
-        test to check if we can find a credential by Account_name that
+        test to check if we can find a credential by Account_name and display information
         '''
 
         self.new_credential.save_credential()

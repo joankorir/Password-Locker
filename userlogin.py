@@ -33,4 +33,21 @@ class Userlogin:
             if userlogin.full_name == full_name:
                 return full_name
 
+
+
+     @classmethod
+    def userlogin_exist(cls,name):
+        '''
+        Method that checks if userlogin exists from the userlogin list.
+        Args:
+            name: full_name to search if it exists
+        Returns :
+            Boolean: True or false depending if the userlogin exists
+        '''
+        for userlogin in cls.userlogin_list:
+            if userlogin.full_name == name:
+                    return True
+
+        return False            
+
  

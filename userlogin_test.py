@@ -42,20 +42,38 @@ class TestUserlogin(unittest.TestCase):
             tearDown method that does clean up after each test case has run.
             '''
 
-    def test_check_userlogin(self)
-         '''
-          test to check if userlogin is exising
-          '''
-
+   
     def test_find_userlogin_by_full_name(self):
         '''
-        self.new_contact.save_userlogin()
+        test to check if we can find a by  that
+        '''
+
+        self.new_userlogin.save_userlogin()
         test_userlogin = Userlogin("Joan korir","joankorirchemutai@gmail.com")
         test_userlogin.save_userlogin()
 
         found_userlogin = Userlogin.find_by_full_name("Joan korir")
 
         self.assertEqual(found_userlogin.email,test_userlogin.email)
+
+
+
+
+    def test_userlogin_exists(self):
+        '''
+        test to check if we can return a Boolean  if we cannot find the userlogin.
+        '''
+
+        self.new_userlogin.save_userlogin()
+        test_userlogin = Userlogin("Joan korir","joankorirchemutai@gmail.com")
+        test_userlogin.save_userlogin()
+
+        userlogin_exists = Userlogin.userlogin_exist("Joan korir")
+
+        self.assertTrue(userlogin_exists)
+
+
+
 
 
 
