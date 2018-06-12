@@ -1,5 +1,6 @@
 #!/usr/bin/env/ python3.6
 from credential import Credential
+from userlogin import Userlogin
 
 def create_credential(email,Account_name,Password):
         '''
@@ -9,7 +10,7 @@ def create_credential(email,Account_name,Password):
         return new_credential
 
 
-  def save_credential(Credential):
+def save_credential(Credential):
         '''
         Function to save credential
         '''
@@ -37,7 +38,7 @@ def display_credential():
         return Credential.display_credential() 
 
 
- def main():
+def main():
     print("Welcome to credent list. What is your name?")
             user_name= input()
 
@@ -108,38 +109,38 @@ def display_credential():
 
 
 
-def save_userlogin(userlogin):
-        '''
-        Function to save userlogin
-        '''
-        userlogin.save_userlogin()
+# def save_userlogin(userlogin):
+#         '''
+#         Function to save userlogin
+#         '''
+#         userlogin.save_userlogin()
 
 
-def find_userlogin(full_name):
-         '''
-         Function that finds userlogin by full_name and returns the 
-         '''
-         return userlogin.find_by_full_name(full_name)
+# def find_userlogin(full_name):
+#          '''
+#          Function that finds userlogin by full_name and returns the 
+#          '''
+#          return userlogin.find_by_full_name(full_name)
 
 
-def check_existing_userlogin(full_name):
-        '''
-        Function that check if userlogin exists with that full_name and returns a Boolean
-        '''
-        return Userlogin.userlogin_exist(full_name) 
+# def check_existing_userlogin(full_name):
+#         '''
+#         Function that check if userlogin exists with that full_name and returns a Boolean
+#         '''
+#         return Userlogin.userlogin_exist(full_name) 
 
 
-def main():
-    print("Welcome to userlogin list list. What is your name?")
-            user_name= input()
+# def main():
+#     print("Welcome to userlogin list list. What is your name?")
+#             user_name= input()
 
-            print(f"Hello {user_name}. what would you like to do?")
-            print('\n')
+#             print(f"Hello {user_name}. what would you like to do?")
+#             print('\n')
 
-            while True:
-                    print("Use these short codes :  fu -find a userlogin, ex -exit the credent list ")
+#             while True:
+#                     print("Use these short codes :  fu -find a userlogin, ex -exit the credent list ")
 
-                    short_code = input().lower()
+#                     short_code = input().lower()
 
-                     print("I really didn't get that. Please use the short codes")
+#                      print("I really didn't get that. Please use the short codes")
    
