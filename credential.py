@@ -6,19 +6,13 @@ class  Credential:
   
     credent_list = [] #Empty
 
-    def __init__(self,email,Account_name,Password):      
+    def __init__(self,email,Account_name,Password): 
 
-    def test_copy_email(self):
-        '''
-        Test to confirm that we are copying the email address from a found contact
-        '''
 
-        self.new_contact.save_contact()
-        Contact.copy_email("0712345678")
-   
         self.email = email
         self.Account_name = Account_name
         self.Password = Password
+        
         
     def save_credential(self):
 
@@ -62,6 +56,16 @@ class  Credential:
           method that returns the credent list
           '''
           return cls.credent_List
+
+    @classmethod
+    def generatePassword(num):
+        password = ''
+
+        for n in range(num)
+            x = random.randint(0,94)
+            password += string.printable[x]
+
+        return password
 
           
 

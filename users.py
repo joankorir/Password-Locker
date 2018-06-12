@@ -5,11 +5,12 @@ class Userlogin:
 
     userlogin_list = [] #empty 
     
-    def __init__(self,full_name,Email):
+    def __init__(self,username,Email,password):
 
 
-        self.full_name = full_name
+        self.username = username
         self.Email = Email
+        self.password = password
 
 
      def save_userlogin(self):
@@ -18,20 +19,24 @@ class Userlogin:
         save_account method saves userlogin objects into userlogin_list
         '''
 
+
+
+    
+
     @classmethod
-    def find_by_full_name(cls,full_name):
+    def find_by_username(cls,username):
         '''
         Method that takes in an full_name and returns a userlogin that matches that full_name.
 
         Args:
-            ful_name: full_name to search for
+            username: username to search for
         Returns :
-            userlogin that matches the full_name.
+            userlogin that matches the username.
         '''
 
         for userlogin in cls.userlogin_list:
-            if userlogin.full_name == full_name:
-                return full_name
+            if userlogin.username == username:
+                return username
 
 
 
@@ -45,7 +50,7 @@ class Userlogin:
             Boolean: True or false depending if the userlogin exists
         '''
         for userlogin in cls.userlogin_list:
-            if userlogin.full_name == name:
+            if userlogin.username == name:
                     return True
 
         return False            

@@ -1,6 +1,7 @@
 import unittest 
+from credential import Credential
 from userlogin import Userlogin
-# import pyperclip
+import pyperclip
 
 class TestUserlogin(unittest.TestCase):
 
@@ -15,15 +16,15 @@ class TestUserlogin(unittest.TestCase):
          '''
          Set up method to run before each test cases.
          '''
-         self.new_userlogin = Userlogin("joan korir","joankorirchemutai@gmail.com")
-         # created account object
+         self.new_userlogin = Userlogin("joan korir","joankorirchemutai@gmail.com","wendy65")
+         # created userlogin object
     
     
     def test__init(self):
         '''
         test__init test if the object is initialized properly
         '''
-        self.assertEqual(self.new_userlogin.full_name,"Joan korir")
+        self.assertEqual(self.new_userlogin.username,"Joan korir")
         self.assertEqual(self.new_userlogin.Email,"joankorirchemutai@gmail.com",)
         
 
@@ -43,16 +44,16 @@ class TestUserlogin(unittest.TestCase):
             '''
 
    
-    def test_find_userlogin_by_full_name(self):
+    def test_find_userlogin_by_username(self):
         '''
         test to check if we can find a by  that
         '''
 
         self.new_userlogin.save_userlogin()
-        test_userlogin = Userlogin("Joan korir","joankorirchemutai@gmail.com")
+        test_userlogin = Userlogin("Joan korir","joankorirchemutai@gmail.com","wendy65")
         test_userlogin.save_userlogin()
 
-        found_userlogin = Userlogin.find_by_full_name("Joan korir")
+        found_userlogin = Userlogin.find_by_username("Joan korir")
 
         self.assertEqual(found_userlogin.email,test_userlogin.email)
 

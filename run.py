@@ -38,6 +38,14 @@ def display_credential():
         return Credential.display_credential() 
 
 
+def generatepassword():
+        '''
+        Function that generates password
+        '''
+        return Credential.generatepassword(16)
+
+
+
 #user login 
 def save_userlogin(userlogin):
         '''
