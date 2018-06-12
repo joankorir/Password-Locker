@@ -30,10 +30,11 @@ class TestUsers(unittest.TestCase):
         
 
 
-    def test_save_userlogin(self):
+    def test_save_users(self):
            '''
-           test_save_users test case to test if the users object is saved into the userlogin list
+           test_save_users test case to test if the users object is saved into the users list
            '''
+           
 
            self.new_users.save_users()
            self.assertEqual(len(Users.users_list),1)
@@ -45,7 +46,7 @@ class TestUsers(unittest.TestCase):
             objects to our users_list
             '''
             self.new_users.save_users()
-            test_save_multiple_users = Users("user","") # new users
+            test_save_multiple_users = Users("username","Email","kyre34") # new users
             test_users.save_users()
             self.assertEqual(len(Users.users_list),2)
 
@@ -60,13 +61,13 @@ class TestUsers(unittest.TestCase):
 # other test cases here
      def test_save_multiple_users(self):
             '''
-            test_save_multiple_userlogin to check if we can save multiple userlogin
+            test_save_multiple_users to check if we can save multiple users
             objects to our userlogin_list
             '''
             self.new_users.save_users()
-            test_userlogin = Users("joankorir44@gmail.com","Facebook","kyler@23") # new credential
-            test_userlogin.save_userlogin()
-            self.assertEqual(len(Users.userlogin_list),2)
+            test_users = Users("username","Email","kyre34") # new user data
+            test_users.save_users()
+            self.assertEqual(len(Users.users_list),2)
 
     
 
@@ -79,7 +80,7 @@ class TestUsers(unittest.TestCase):
    
     def test_find_users_by_username(self):
         '''
-        test to check if we can find a by  that
+        test to check if we can find a credential detail by username and display the info
         '''
 
         self.new_users.save_users()
