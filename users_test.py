@@ -96,7 +96,7 @@ class TestUsers(unittest.TestCase):
 
     def test_users_exists(self):
         '''
-        test to check if we can return a Boolean  if we cannot find the userlogin.
+        test to check if we can return a Boolean  if we cannot find the users.
         '''
 
         self.new_users.save_users()

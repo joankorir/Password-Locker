@@ -68,6 +68,8 @@ class TestCredential(unittest.TestCase):
             test_credential.save_credential()
             self.assertEqual(len(Credential.credent_list),2)
 
+
+    
     
     def test_find_credential_by_Account_name(self):
         '''
@@ -75,10 +77,10 @@ class TestCredential(unittest.TestCase):
         '''
 
         self.new_credential.save_credential()
-        test_credential = Credential("joankorirchemutai@gmail.com","Instagram","joan1234") 
+        test_credential = Credential("joankorir44@gmail.com","Facebook","kyler@23") 
         test_credential.save_credential()
 
-        found_credential = Credential.find_by_Account_name("Instagram")
+        found_credential = Credential.find_by_Account_name("Facebook")
 
         self.assertEqual(found_credential.Account_name,test_credential.Account_name)
 
@@ -88,10 +90,10 @@ class TestCredential(unittest.TestCase):
         '''
 
         self.new_credential.save_credential()
-        test_credential = Credential("joankorirchemutai@gmail.com","Instagram","joan1234") 
+        test_credential = Credential("joankorir44@gmail.com","Facebook","kyler@23") 
         test_credential.save_credential()
 
-        credential_exists = Credential.credential_exist("Instagram)
+        credential_exists = Credential.credential_exist("Facebook")
 
         self.assertTrue(credential_exists)
 
