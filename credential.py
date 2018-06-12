@@ -66,9 +66,9 @@ class  Credential:
           
 
     @classmethod
-    def copy_email(cls,Account_name):
+    def copy_email(cls,Password):
         credential_found = Credential.find_by_Account_name(Account_name)
-        pyperclip.copy(credential_found.email)
+        pyperclip.copy(credential_found.Password)
           
 
         

@@ -80,15 +80,15 @@ class TestCredential(unittest.TestCase):
          self.assertEqual(Credential.display_credentials(),Credential.credent_list)
 
 
-    def test_copy_email(self):
+    def test_copy_Password(self):
         '''
-        Test to confirm that we are copying the email address from a found credential
+        Test to confirm that we are copying the Password from a found credential
         '''
 
         self.new_credential.save_credential()
-        Credential.copy_email("Instagram")
+        Credential.copy_Password("joan 1234")
 
-        self.assertEqual(self.new_credential.email,pyperclip.paste())
+        self.assertEqual(self.new_credential.Password,pyperclip.paste())
     
                
    
