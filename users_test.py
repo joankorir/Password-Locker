@@ -32,22 +32,22 @@ class TestUsers(unittest.TestCase):
 
     def test_save_userlogin(self):
            '''
-           test_save_userlogin test case to test if the userlogin object is saved into the userlogin list
+           test_save_users test case to test if the users object is saved into the userlogin list
            '''
 
-           self.new_userlogin.save_userlogin()
-           self.assertEqual(len(Userlogin.userlogin_list),1)
+           self.new_users.save_users()
+           self.assertEqual(len(Users.users_list),1)
 
 
-    def test_save_multiple_userlogin(self):
+    def test_save_multiple_users(self):
             '''
-            test_save_multiple_userlogin to check if we can save multiple userlogin
-            objects to our userlogin_list
+            test_save_multiple_users to check if we can save multiple users
+            objects to our users_list
             '''
-            self.new_userlogin.save_userlogin()
-            test_userlogin = Userlogin("user","") # new userlogin
-            test_userlogin.save_userlogin()
-            self.assertEqual(len(Userlogin.userlogin_list),2)
+            self.new_users.save_users()
+            test_save_multiple_users = Users("user","") # new users
+            test_users.save_users()
+            self.assertEqual(len(Users.users_list),2)
 
 
     # setup and class creation up here
@@ -55,18 +55,18 @@ class TestUsers(unittest.TestCase):
             '''
             tearDown method that does clean up after each test case has run.
             '''
-            Userlogin.userlogin_list = []
+            Users.users_list = []
 
 # other test cases here
-    def test_save_multiple_userlogin(self):
+    def test_save_multiple_users(self):
             '''
             test_save_multiple_userlogin to check if we can save multiple userlogin
             objects to our userlogin_list
             '''
-            self.new_userlogin.save_userlogin()
-            test_userlogin = Userlogin("joankorir44@gmail.com","Facebook","kyler@23") # new credential
+            self.new_users.save_users()
+            test_userlogin = Users("joankorir44@gmail.com","Facebook","kyler@23") # new credential
             test_userlogin.save_userlogin()
-            self.assertEqual(len(Userlogin.userlogin_list),2)
+            self.assertEqual(len(Users.userlogin_list),2)
 
     
 
@@ -77,32 +77,32 @@ class TestUsers(unittest.TestCase):
             '''
 
    
-    def test_find_userlogin_by_username(self):
+    def test_find_users_by_username(self):
         '''
         test to check if we can find a by  that
         '''
 
-        self.new_userlogin.save_userlogin()
-        test_userlogin = Userlogin("Joan korir","joankorirchemutai@gmail.com","wendy65")
-        test_userlogin.save_userlogin()
+        self.new_users.save_users()
+        test_users= Users("Joan korir","joankorirchemutai@gmail.com","wendy65")
+        test_users.save_users()
 
-        found_userlogin = Userlogin.find_by_username("Joan korir")
+        found_users = Users.find_by_username("Joan korir")
 
-        self.assertEqual(found_userlogin.email,test_userlogin.email)
-
-
+        self.assertEqual(found_users.email,test_users.email)
 
 
-    def test_userlogin_exists(self):
+
+
+    def test_users_exists(self):
         '''
         test to check if we can return a Boolean  if we cannot find the userlogin.
         '''
 
-        self.new_userlogin.save_userlogin()
-        test_userlogin = Userlogin("Joan korir","joankorirchemutai@gmail.com")
-        test_userlogin.save_userlogin()
+        self.new_users.save_users()
+        test_users = Users("Joan korir","joankorirchemutai@gmail.com")
+        test_users.save_userlogin()
 
-        userlogin_exists = Userlogin.userlogin_exist("Joan korir")
+        userlogin_exists = Users.users_exist("Joan korir")
 
         self.assertTrue(userlogin_exists)
 
