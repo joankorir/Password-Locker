@@ -47,25 +47,37 @@ def generatepassword():
 
 
 #user login 
-def save_userlogin(userlogin):
-        '''
-        Function to save userlogin
-        '''
-        userlogin.save_userlogin()
 
 
-def find_userlogin(full_name):
+
+def create_users(username,Email,password):
+    '''
+    Function to create a new users
+    '''
+    new_users= Users(username,Email,password)
+    return new_users
+
+
+
+def save_users(users):
+        '''
+        Function to save users
+        '''
+        users.save_users()
+
+
+def find_users(username):
          '''
-         Function that finds userlogin by full_name and returns the 
+         Function that finds users by full_name and returns the 
          '''
-         return userlogin.find_by_full_name(full_name)
+         return userlogin.find_by_username(username)
 
 
-def check_existing_userlogin(full_name):
+def check_existing_users(full_name):
         '''
-        Function that check if userlogin exists with that full_name and returns a Boolean
+        Function that check if users exists with that username and returns a Boolean
         '''
-        return Userlogin.userlogin_exist(full_name) 
+        return Users.users_exist(username) 
 
 
 
