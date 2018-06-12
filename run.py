@@ -127,3 +127,19 @@ def check_existing_userlogin(full_name):
         Function that check if userlogin exists with that full_name and returns a Boolean
         '''
         return Userlogin.userlogin_exist(full_name) 
+
+
+def main():
+    print("Welcome to userlogin list list. What is your name?")
+            user_name= input()
+
+            print(f"Hello {user_name}. what would you like to do?")
+            print('\n')
+
+            while True:
+                    print("Use these short codes :  fu -find a userlogin, ex -exit the credent list ")
+
+                    short_code = input().lower()
+
+                     print("I really didn't get that. Please use the short codes")
+   
