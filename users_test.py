@@ -1,12 +1,12 @@
 import unittest 
 from credential import Credential
-from userlogin import Userlogin
+from uses import Users
 import pyperclip
 
-class TestUserlogin(unittest.TestCase):
+class TestUsers(unittest.TestCase):
 
     '''
-    Test class that defines test cases for the Userlogin class behaviours.
+    Test class that defines test cases for the Users class behaviours.
 
     Args:
          unittest.TestCase: TestCase class that helps in creating test cases
@@ -16,16 +16,17 @@ class TestUserlogin(unittest.TestCase):
          '''
          Set up method to run before each test cases.
          '''
-         self.new_userlogin = Userlogin("joan korir","joankorirchemutai@gmail.com","wendy65")
-         # created userlogin object
+         self.new_users = Users("joan korir","joankorirchemutai@gmail.com","wendy65")
+         # created users object
     
     
     def test__init(self):
         '''
         test__init test if the object is initialized properly
         '''
-        self.assertEqual(self.new_userlogin.username,"Joan korir")
-        self.assertEqual(self.new_userlogin.Email,"joankorirchemutai@gmail.com",)
+        self.assertEqual(self.new_users.username,"Joan korir")
+        self.assertEqual(self.new_users.Email,"joankorirchemutai@gmail.com",)
+        self.assertEqual(self,new_users.password,"wendy65")
         
 
 
@@ -36,6 +37,38 @@ class TestUserlogin(unittest.TestCase):
 
            self.new_userlogin.save_userlogin()
            self.assertEqual(len(Userlogin.userlogin_list),1)
+
+
+    def test_save_multiple_userlogin(self):
+            '''
+            test_save_multiple_userlogin to check if we can save multiple userlogin
+            objects to our userlogin_list
+            '''
+            self.new_userlogin.save_userlogin()
+            test_userlogin = Userlogin("user","") # new userlogin
+            test_userlogin.save_userlogin()
+            self.assertEqual(len(Userlogin.userlogin_list),2)
+
+
+    # setup and class creation up here
+    def tearDown(self):
+            '''
+            tearDown method that does clean up after each test case has run.
+            '''
+            Userlogin.userlogin_list = []
+
+# other test cases here
+    def test_save_multiple_userlogin(self):
+            '''
+            test_save_multiple_userlogin to check if we can save multiple userlogin
+            objects to our userlogin_list
+            '''
+            self.new_userlogin.save_userlogin()
+            test_userlogin = Userlogin("joankorir44@gmail.com","Facebook","kyler@23") # new credential
+            test_userlogin.save_userlogin()
+            self.assertEqual(len(Userlogin.userlogin_list),2)
+
+    
 
 
     def tearDown(self):
