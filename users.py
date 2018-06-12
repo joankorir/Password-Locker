@@ -1,9 +1,9 @@
-class Userlogin:
+class Users:
     """
-    Class that generates new instances of userlogin.
+    Class that generates new instances of users.
     """
 
-    userlogin_list = [] #empty 
+    users_list = [] #empty 
     
     def __init__(self,username,Email,password):
 
@@ -13,10 +13,10 @@ class Userlogin:
         self.password = password
 
 
-     def save_userlogin(self):
+     def save_users(self):
 
         '''
-        save_account method saves userlogin objects into userlogin_list
+        save_account method saves users objects into users_list
         '''
 
 
@@ -26,31 +26,31 @@ class Userlogin:
     @classmethod
     def find_by_username(cls,username):
         '''
-        Method that takes in an full_name and returns a userlogin that matches that full_name.
+        Method that takes in an username and returns a users that matches that username.
 
         Args:
             username: username to search for
         Returns :
-            userlogin that matches the username.
+            users that matches the username.
         '''
 
-        for userlogin in cls.userlogin_list:
-            if userlogin.username == username:
+        for users in cls.users_list:
+            if users.username == username:
                 return username
 
 
 
      @classmethod
-    def userlogin_exist(cls,name):
+    def users_exist(cls,name):
         '''
-        Method that checks if userlogin exists from the userlogin list.
+        Method that checks if userlogin exists from the users list.
         Args:
             name: full_name to search if it exists
         Returns :
-            Boolean: True or false depending if the userlogin exists
+            Boolean: True or false depending if the users exists
         '''
-        for userlogin in cls.userlogin_list:
-            if userlogin.username == name:
+        for users in cls.users_list:
+            if users.username == name:
                     return True
 
         return False            
