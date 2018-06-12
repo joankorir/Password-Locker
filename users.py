@@ -43,7 +43,7 @@ class Users:
      @classmethod
     def users_exist(cls,name):
         '''
-        Method that checks if userlogin exists from the users list.
+        Method that checks if usersexists from the users list.
         Args:
             name: full_name to search if it exists
         Returns :
