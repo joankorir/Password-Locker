@@ -13,6 +13,7 @@ class  Credential:
 
             self.email = email
             self.Account_name = Account_name
+            self.Username = Username
             self.Password = Password
 
 

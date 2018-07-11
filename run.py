@@ -99,9 +99,9 @@ def main():
                 if short_code == 'cc':
                     print("New credential")
                     print("-"*10)
-
-                    print ("username ....")
-                    username= input()
+                    # 
+                    # print ("username ....")
+                    # username= input()
 
 
                     print("Email ...")
